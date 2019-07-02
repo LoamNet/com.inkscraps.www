@@ -1,0 +1,6 @@
+images = [
+	{
+		"src":"assets/images/Raspberry Paper.jpg",
+		"alt":"A batch of 5x7 sheets of raspberry-tinted paper!"
+	},
+]

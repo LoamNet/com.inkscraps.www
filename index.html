@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Pangolin&display=swap" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 	</head>
@@ -26,6 +27,112 @@
 			margin: 0px;
 		}
 
+
+		/* ---------- Tiled Images ---------- */
+
+
+		.ink-displayable {
+			cursor: pointer;
+			transition: 0.2s;
+			width:100%;
+
+		}
+
+		.ink-displayable:hover { filter: brightness(110%);}
+
+
+		/* ---------- Start Modal config ---------- */
+
+		.ink-panel {
+			display: inline-block;
+
+			max-width: 210px;
+			border: 1px solid rgba(0, 0, 0, .05);
+			background-color: rgba(100, 70, 70, .05);
+			margin: 5px;
+
+			box-shadow: 1px 1px 2px rgba(0, 0, 0, .05);
+		}
+
+		.ink-modal {
+			display: none;
+			overflow: auto;
+			padding-top: 100px;
+			z-index: 1;
+
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+
+			transition: 10s;
+
+			background-color: rgb(0, 0, 0);
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+
+		.modal-content {
+		  margin: auto;
+		  display: block;
+		  width: 80%;
+		  max-width: 700px;
+		}
+
+		#modal-caption {
+		  margin: auto;
+		  display: block;
+		  width: 80%;
+		  max-width: 500px;
+		  text-align: center;
+		  color: #ccc;
+		  padding: 10px 0;
+		  height: 150px;
+		  font-family: 'Pangolin', sans-serif;
+		}
+
+		.modal-content, #modal-caption { 
+		  animation-name: zoom;
+		  animation-duration: 0.6s;
+		}
+
+		@keyframes zoom {
+		  from {transform:scale(0)} 
+		  to {transform:scale(1)}
+		}
+
+		#modal-close {
+		  position: absolute;
+		  top: 15px;
+		  right: 35px;
+		  color: #f1f1f1;
+		  font-size: 40px;
+		  font-weight: bold;
+		  transition: 0.3s;
+		}
+
+		#modal-close:hover,
+		#modal-close:focus {
+		  color: #bbb;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+
+		@media only screen and (max-width: 700px){
+		  .modal-content {
+		    width: 100%;
+		  }
+		}
+
+
+		/* ---------- End Modal config ---------- */
+
+		.ink-caption {
+			font-family: 'Pangolin', sans-serif;
+			margin-top: 10px;
+			line-height: 1.25em;
+		}
+
 		.ink-body {
 			text-align: center;
 			background-image: url('assets/paper.png');
@@ -33,14 +140,21 @@
 			width: 100%;
 		}
 
-		.ink-image {
-			max-width: 200px;
-			margin: 10px;
+		#ink-logo {
+			max-width: 150px;
+
+			margin-top: 10px;
+			margin-left: 20px;
+			margin-bottom: 5px;
 		}
 
 		.ink-text-link {
-			font-size: 12px;
-			opacity: 0.4;
+			position: absolute;
+
+			left: 15px;
+			top: 117px;
+			font-size: 10px;
+			opacity: 0.35;
 			font-family: 'Lato', sans-serif;
 		}
 
@@ -48,12 +162,28 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			vertical-align: middle;
+
 			margin: 10px;
 		}
 
 		.ink-text-title {
 			font-family: 'IM Fell English SC', serif;
 			color: rgb(40, 40, 40);
+			display: inline-block;
+		}
+
+		.ink-text-title h1 {
+			margin: 0px;
+		}
+
+		.ink-text-subtitle {
+			font-family: 'IM Fell English SC', serif;
+			color: rgb(40, 40, 40);
+			font-size: 16px;
+			margin: 0px;
+			margin-left: 2px;
+			display: inline-block;
 		}
 
 		.ink-main {
@@ -76,34 +206,93 @@
 					user-select: none; /* Non-prefixed version, currently
 											supported by Chrome and Opera */
 		}
+
+		.ink-hr {
+			max-width: 400px;
+			margin-top: -5px;
+			margin-bottom: 40px;
+			text-align: left;
+		}
+
 	</style>
 
 	<body>
 		<div class="ink-body">
 			<div class="ink-main container">
-				<div class="row justify-content-center">
-
-
+				<div class="row justify-content-start">
 					<div class="col-xs">
-						<img id="logo" class="ink-image ink-noselect" src="assets/logo.png" alt="ink splotch logo">
+						<img id="ink-logo" class="ink-noselect" src="assets/logo.png" alt="ink splotch logo">
+						<span class="ink-text-link">[&nbsp;<a style="text-decoration: none;" href="https://www.reveriewisp.com/"><i class="fas fa-link"></i> Reverie Wisp</a>&nbsp;]</span>
 					</div>
-
-
 					<div class="col-xs ink-center">
 						<div class="ink-center ink-text-title">
-							<h1>Dragon Ink <p class="ink-text-link ink-center">[ <a style="text-decoration: none;" href="https://www.reveriewisp.com/">Reverie Wisp</a> ]</p></h1>
+							<h1>Dragon Ink</h1>
+							<h2 class="ink-text-subtitle">Doodles &amp; more!</h2>
 						</div>
 					</div>
+				</div>
 
+				<!-- Displayable images -->
+				<div class="ink-hr">
+					<hr/>
+				</div>
+				<div>
+					<span id="displayed"></span>
+				</div>
 
+				<!-- Linkback to blog -->
+
+				<!-- Modal contents -->
+				<div id="myModal" class="ink-modal">
+					<span id="modal-close">&times;</span>
+					<img class="modal-content" id="ink-modal-image">
+					<div id="modal-caption"></div>
 				</div>
 			</div>
 		</div>
 
 
+		<!-- Provides an array of image objects -->
+		<script language="JavaScript" src="images.json"></script>
+
+		<!-- Set up the document -->
 		<script type="text/javascript">
-			document.getElementById('logo').draggable = false;
+			// Disable logo interactions
+			document.getElementById('ink-logo').draggable = false;
+
+			// Sift through and display all the images in the json file
+			for(let i = 0; i < images.length; i++) {
+				let src = images[i].src;
+				let alt = images[i].alt;
+
+				let elem = document.getElementById('displayed');
+
+				elem.innerHTML = elem.innerHTML + `<div class="ink-panel"><img class="ink-displayable" src="${src}" alt="${alt}"><p class="ink-caption">${alt}</p></div>`;
+			}
+
+			// now that items are displayed, parse them to hook up popup behavior
+			let displayables = document.getElementsByClassName("ink-displayable");
+			let modalImg = document.getElementById("ink-modal-image");
+
+			for (i = 0; i < displayables.length; i++) {
+				let element = displayables[i];
+			
+				element.onclick = function() {
+					modal.style.display = "block";
+					modalImg.src = this.src;
+					modalCaption.innerHTML = this.alt;
+				}
+			}
+
+			// Set up modal interactions
+			let modal = document.getElementById("myModal");
+			let modalCaption = document.getElementById("modal-caption");
+			let closeSection = document.getElementById("modal-close");
+			let closeBG = document.getElementById("myModal");
+
+			closeBG.onclick = function() { modal.style.display = "none"; }
+			closeSection.onclick = function() { modal.style.display = "none"; }
+
 		</script>
 	</body>
-
 </html>
