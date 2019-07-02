@@ -34,23 +34,26 @@
 		}
 
 		.ink-image {
-			max-width: 250px;
-			margin-top: 3em;
+			max-width: 200px;
+			margin: 10px;
 		}
 
 		.ink-text-link {
 			font-size: 12px;
-			opacity: 0.3;
-			text-decoration: none;
+			opacity: 0.4;
 			font-family: 'Lato', sans-serif;
 		}
 
-		.ink-text-body {
-			font-family: 'Lato', sans-serif;
+		.ink-center {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 10px;
 		}
 
 		.ink-text-title {
 			font-family: 'IM Fell English SC', serif;
+			color: rgb(40, 40, 40);
 		}
 
 		.ink-main {
@@ -61,8 +64,6 @@
 			margin-left: auto;
 			margin-right: auto;
 			max-width: 600px;
-			margin-top: 1em;
-			margin-bottom: 1em;
 		}
 
 		.ink-noselect {
@@ -80,16 +81,21 @@
 	<body>
 		<div class="ink-body">
 			<div class="ink-main container">
-				<img id="logo" class="ink-image ink-noselect" src="assets/logo.png" alt="ink splotch logo">
-				<div class="ink-break">
-					<p class="ink-text-link">[ <a style="text-decoration: none;" href="https://www.reveriewisp.com/">Reverie Wisp</a> ]</p>
-					<hr/>
-				</div>
-				<div class="ink-text-title">
-					<h1>Dragon Ink</h1>
-				</div>
-				<div>
-					<!--p class="ink-text-body">Some sample text, artistic and style</p-->
+				<div class="row justify-content-center">
+
+
+					<div class="col-xs">
+						<img id="logo" class="ink-image ink-noselect" src="assets/logo.png" alt="ink splotch logo">
+					</div>
+
+
+					<div class="col-xs ink-center">
+						<div class="ink-center ink-text-title">
+							<h1>Dragon Ink <p class="ink-text-link ink-center">[ <a style="text-decoration: none;" href="https://www.reveriewisp.com/">Reverie Wisp</a> ]</p></h1>
+						</div>
+					</div>
+
+
 				</div>
 			</div>
 		</div>
