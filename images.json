@@ -1,13 +1,22 @@
 images = [
 	{
+		"date":"2019-07-02",
+		"title":"Paper-Trees",
+
 		"src":"assets/images/paper trees 1.jpg",
 		"alt":"I ended up quickly doodling some trees on some handmade paper!"
 	},
 	{
+		"date":"2019-07-02",
+		"title":"Raspberry-Sheets",
+
 		"src":"assets/images/raspberry sheets.jpg",
 		"alt":"A handmade batch of 5x7 sheets of raspberry-tinted paper that's sadly not edible."
 	},
 	{
+		"date":"2019-07-02",
+		"title":"Paper-Plants",
+
 		"src":"assets/images/paper trees 2.jpg",
 		"alt":"Another little set of tree and plant doodles. Can't let the back of the paper go to waste!"
 	},

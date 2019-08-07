@@ -76,7 +76,7 @@
 			transition: 10s;
 
 			background-color: rgb(0, 0, 0);
-			background-color: rgba(0, 0, 0, 0.6);
+			background-color: rgba(0, 0, 0, 0.85);
 		}
 
 		.modal-content {
@@ -100,7 +100,7 @@
 
 		.modal-content, #modal-caption { 
 		  animation-name: zoom;
-		  animation-duration: 0.6s;
+		  animation-duration: 0.2s;
 		}
 
 		@keyframes zoom {
@@ -115,7 +115,7 @@
 		  color: #f1f1f1;
 		  font-size: 40px;
 		  font-weight: bold;
-		  transition: 0.3s;
+		  transition: 0.2s;
 		}
 
 		#modal-close:hover,
@@ -152,20 +152,14 @@
 		}
 
 		#ink-logo {
-			max-width: 150px;
+			max-width: 130px;
 
-			margin-top: 10px;
-			margin-left: 20px;
-			margin-bottom: 5px;
+			margin: 10px;
 		}
 
 		.ink-text-link {
-			position: absolute;
-
-			left: 15px;
-			top: 135px;
-			font-size: 10px;
-			opacity: 0.4;
+			font-size: 16px;
+			opacity: 0.6;
 			font-family: 'Lato', sans-serif;
 		}
 
@@ -175,10 +169,12 @@
 			justify-content: center;
 			vertical-align: middle;
 
-			margin: 10px;
+			margin-left: 10px;
+			margin-right: 10px;
 		}
 
 		.ink-text-title {
+			padding-top: 20px;
 			font-family: 'IM Fell English SC', serif;
 			color: rgb(40, 40, 40);
 			display: inline-block;
@@ -186,15 +182,14 @@
 
 		.ink-text-title h1 {
 			margin: 0px;
+			font-size: 25px;
 		}
 
 		.ink-text-subtitle {
 			font-family: 'IM Fell English SC', serif;
 			color: rgb(40, 40, 40);
-			font-size: 16px;
-			margin: 0px;
-			margin-left: 2px;
-			display: inline-block;
+			font-size: 17px;
+			margin-bottom: 0px;
 		}
 
 		.ink-main {
@@ -219,10 +214,9 @@
 		}
 
 		.ink-hr {
-			max-width: 400px;
 			margin-top: -5px;
-			margin-bottom: 40px;
-			text-align: left;
+			margin-bottom: 20px;
+			text-align: center;
 		}
 
 	</style>
@@ -230,15 +224,15 @@
 	<body>
 		<div class="ink-body">
 			<div class="ink-main container">
-				<div class="row justify-content-start">
+				<div class="row justify-content-center">
 					<div class="col-xs">
 						<img id="ink-logo" class="ink-noselect" src="assets/logo.png" alt="ink splotch logo">
-						<span class="ink-text-link">[&nbsp;<a style="text-decoration: none;" href="https://www.reveriewisp.com/"> Reverie Wisp </a>&nbsp;]</span>
 					</div>
 					<div class="col-xs ink-center">
 						<div class="ink-center ink-text-title">
 							<h1>Dragon Ink</h1>
 							<h2 class="ink-text-subtitle">Doodles &amp; more!</h2>
+							<span class="ink-text-link">[&nbsp;<a style="text-decoration: none;" href="https://twitter.com/ReverieWisp"><i class="fab fa-twitter"></i></a>&nbsp;]&nbsp;&nbsp;[&nbsp;<a style="text-decoration: none;" href="https://www.reveriewisp.com/"><i class="fas fa-home"></i></a>&nbsp;]</span>
 						</div>
 					</div>
 				</div>
@@ -304,6 +298,16 @@
 			closeBG.onclick = function() { modal.style.display = "none"; }
 			closeSection.onclick = function() { modal.style.display = "none"; }
 
+			// Parse query string and display the corresponding thing as necessary
+			// From https://davidwalsh.name/query-string-javascript
+			function getUrlParameter(name) {
+				name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+				let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+				let results = regex.exec(location.search);
+				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+			};
+
+			//let urlParams = new URLSearchParams(window.location.search)
 		</script>
 	</body>
 </html>
