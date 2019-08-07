@@ -1,2 +1,2 @@
 # ink.derg.www
-Derg Ink!
+Dragon ink product, commission, and showcase website
