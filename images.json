@@ -1,10 +1,17 @@
 images = [
 	{
+		"date":"2019-07-29",
+		"title":"Paper-Journal",
+
+		"src":"assets/images/first journal.jpg",
+		"alt":"The first of hopefully many journals"
+	},
+	{
 		"date":"2019-07-02",
 		"title":"Paper-Trees",
 
 		"src":"assets/images/paper trees 1.jpg",
-		"alt":"I ended up quickly doodling some trees on some handmade paper!"
+		"alt":"A doodle test on an early, very rough batch of handmade paper!"
 	},
 	{
 		"date":"2019-07-02",
@@ -18,6 +25,6 @@ images = [
 		"title":"Paper-Plants",
 
 		"src":"assets/images/paper trees 2.jpg",
-		"alt":"Another little set of tree and plant doodles. Can't let the back of the paper go to waste!"
+		"alt":"A set of tree and plant doodles!"
 	},
 ]
