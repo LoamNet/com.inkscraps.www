@@ -238,6 +238,48 @@
 		hr {
 			opacity: .75;
 		}
+
+		.flexgrid-row {
+			display: -ms-flexbox;
+			display: flex;
+
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+
+			padding: 0 4px;
+		}
+
+		/* 4 col */
+		.flexgrid-column {
+			-ms-flex: 25%;
+			flex: 25%;
+
+			max-width: 25%;
+			padding: 0 4px;
+		}
+
+		.flexgrid-column img {
+			margin-top: 8px;
+			vertical-align: middle;
+		}
+
+		/* Stack double */
+		@media screen and (max-width: 800px) {
+			.flexgrid-column {
+				-ms-flex: 50%;
+				flex: 50%;
+				max-width: 50%;
+			}
+		}
+
+		/* Stack single */
+		@media screen and (max-width: 600px) {
+			.flexgrid-column {
+				-ms-flex: 100%;
+				flex: 100%;
+				max-width: 100%;
+			}
+		}
 	</style>
 
 	<body>
@@ -287,7 +329,7 @@
 					</div>
 				</div>
 				<br/>
-				<button type="button" class="btn btn-outline-dark">Inventory &amp; Commission Form</button>
+				<button type="button" class="btn btn-outline-dark disabled">Inventory &amp; Commission Form</button>
 				<br/>
 				<br/>
 				<p style="max-width: 400px; margin-left: auto; margin-right: auto;">Shipping is $5 flat rate for all orders. Tax is included in all pricing. All paper is made from recycled materials.</p>
@@ -298,9 +340,21 @@
 					<hr/>
 					<h2 class="ink-text-title">Gallery</h2>
 				</div>
-				<br/>
 				<div>
-					<span id="displayed"></span>
+					<div class="flexgrid-row"> 
+						<div class="flexgrid-column">
+							<span id="displayed-0"></span>
+						</div>
+						<div class="flexgrid-column">
+							<span id="displayed-1"></span>
+						</div>  
+						<div class="flexgrid-column">
+							<span id="displayed-2"></span>
+						</div>
+						<div class="flexgrid-column">
+            				<span id="displayed-3"></span>
+            			</div>
+            		</div>
 				</div>
 				<br/>
 
@@ -338,7 +392,7 @@
 				let src = images[i].src;
 				let alt = images[i].alt;
 
-				let elem = document.getElementById('displayed');
+				let elem = document.getElementById('displayed-' + (i % 4));
 
 				elem.innerHTML = elem.innerHTML + `<div class="ink-panel"><img class="ink-displayable" src="${src}" alt="${alt}"><p class="ink-caption">${alt}</p></div>`;
 			}
