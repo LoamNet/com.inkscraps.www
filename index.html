@@ -12,6 +12,16 @@
 
 		<title>Dragon Ink</title>
 		
+		<!-- Open graph preview tools -->
+		<meta property="og:site_name" content="Dragon Ink">
+		<meta property="og:title" content="Dragon Ink: Handmade Paper and Art">
+		<meta property="og:description" content="Handmade paper, journals, and ink-based artwork available to purchase or commission!">
+		<meta property="og:image" content="https://derg.ink/assets/logo.png">
+		<meta property="og:url" content="https://derg.ink/">
+		<meta name="twitter:site" content="@LoamApp">
+		<meta name="twitter:card" content="Handmade paper, journals and artwork!">
+
+		<!-- Style sheets -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Lato" rel="stylesheet">
@@ -477,7 +487,13 @@
 					let targetDate = target.getAttribute("data-date").toLowerCase();
 					let targetTitle = target.getAttribute("data-title").toLowerCase();
 					if(date == targetDate && title == targetTitle) {
+						let img = "https://derg.ink/" + target.getAttribute('src');
+						let desc = target.getAttribute('alt');
+
+						document.querySelector('meta[property="og:image"').setAttribute("content", img);
+						document.querySelector('meta[property="og:description"').setAttribute("content", desc);
 						onElementClick(target, false);
+						break;
 					}
 				}
 			}
