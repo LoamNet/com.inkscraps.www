@@ -443,9 +443,16 @@
 					if(writeToHistory != null && writeToHistory == true)
 					{
 						let date = element.getAttribute("data-date");
+						let src = element.getAttribute("src");
+						let desc = element.getAttribute("alt");
 						let title = element.getAttribute("data-title");
 						let querystr = `?date=${date}&title=${title}`;
-						
+
+						document.querySelector('meta[property="og:title"').setAttribute("content", title);
+						document.querySelector('meta[property="og:image"').setAttribute("content", "https://derg.ink/" + src);
+						document.querySelector('meta[property="og:description"').setAttribute("content", desc);
+						document.querySelector('meta[property="og:url"').setAttribute("content", "https://derg.ink/" + querystr);
+
 						window.history.pushState("Dragon Ink Gallery", "Dragon Ink Gallery", querystr);
 					}
 			}
@@ -486,12 +493,8 @@
 					let target = displayables[i];
 					let targetDate = target.getAttribute("data-date").toLowerCase();
 					let targetTitle = target.getAttribute("data-title").toLowerCase();
-					if(date == targetDate && title == targetTitle) {
-						let img = "https://derg.ink/" + target.getAttribute('src');
-						let desc = target.getAttribute('alt');
 
-						document.querySelector('meta[property="og:image"').setAttribute("content", img);
-						document.querySelector('meta[property="og:description"').setAttribute("content", desc);
+					if(date == targetDate && title == targetTitle) {
 						onElementClick(target, false);
 						break;
 					}
