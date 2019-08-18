@@ -404,25 +404,40 @@
 			for(let i = 0; i < images.length; i++) {
 				let src = images[i].src;
 				let alt = images[i].alt;
-
+				let date = images[i].date;
+				let title = images[i].title;
 				let elem = document.getElementById('displayed-' + (i % columns));
 
-				elem.innerHTML = elem.innerHTML + `<div class="ink-panel"><img class="ink-displayable" src="${src}" alt="${alt}"><p class="ink-caption">${alt}</p></div>`;
+				elem.innerHTML = elem.innerHTML + `<div class="ink-panel"><img data-date="${date}" data-title="${title}" class="ink-displayable" src="${src}" alt="${alt}"><p class="ink-caption">${alt}</p></div>`;
 			}
 
 			// now that items are displayed, parse them to hook up popup behavior
-			let displayables = document.getElementsByClassName("ink-displayable");
-			let modalImg = document.getElementById("ink-modal-image");
+			var displayables = document.getElementsByClassName("ink-displayable");
+			var modalImg = document.getElementById("ink-modal-image");
 
-			// Populate displayables
+			// Set up displayables for callbacks
 			for (i = 0; i < displayables.length; i++) {
 				let element = displayables[i];
 			
-				element.onclick = function() {
+				element.onclick = function() { 
+					onElementClick(element, true);
+				};
+			}
+
+			// Displays the target image in history
+			function onElementClick(element, writeToHistory) {
 					modal.style.display = "block";
-					modalImg.src = this.src;
-					modalCaption.innerHTML = this.alt;
-				}
+					modalImg.src = element.src;
+					modalCaption.innerHTML = element.alt;
+
+					if(writeToHistory != null && writeToHistory == true)
+					{
+						let date = element.getAttribute("data-date");
+						let title = element.getAttribute("data-title");
+						let querystr = `?date=${date}&title=${title}`;
+						
+						window.history.pushState("Dragon Ink Gallery", "Dragon Ink Gallery", querystr);
+					}
 			}
 
 			// Set up modal interactions
@@ -436,15 +451,36 @@
 			closeSection.onclick = function() { modal.style.display = "none"; }
 
 			// Parse query string and display the corresponding thing as necessary
-			// From https://davidwalsh.name/query-string-javascript
-			function getUrlParameter(name) {
-				name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-				let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-				let results = regex.exec(location.search);
-				return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-			};
+			// Modified from https://stackoverflow.com/a/2091331
+			function getQueryVariable(variable) {
+			    let query = window.location.search.substring(1);
+			    let vars = query.split('&');
 
-			//let urlParams = new URLSearchParams(window.location.search)
+			    for (let i = 0; i < vars.length; i++) {
+			        let pair = vars[i].split('=');
+			        if (decodeURIComponent(pair[0]) == variable) {
+			            return decodeURIComponent(pair[1]);
+			        }
+			    }
+
+			    return null;
+			}
+
+			// Parse out params and pop up the target image if it exists
+			if(getQueryVariable('date') != null && getQueryVariable('title') != null)
+			{
+				let date = getQueryVariable('date').toLowerCase();
+				let title  = getQueryVariable('title').toLowerCase();
+
+				for(let i = 0; i < displayables.length; ++i) {
+					let target = displayables[i];
+					let targetDate = target.getAttribute("data-date").toLowerCase();
+					let targetTitle = target.getAttribute("data-title").toLowerCase();
+					if(date == targetDate && title == targetTitle) {
+						onElementClick(target, false);
+					}
+				}
+			}
 		</script>
 	</body>
 </html>

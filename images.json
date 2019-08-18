@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2019-08-18",
+		"title":"40-Pages",
+
+		"src":"assets/images/40 standard sheets.jpg",
+		"alt":"A larger batch of very light 4x6 sheets of paper for a larger custom journal!"
+	},
+	{
 		"date":"2019-08-08",
 		"title":"Black-and-White",
 
