@@ -464,8 +464,8 @@
 			let closeBG = document.getElementById("modal");
 
 			// Modal function binding
-			closeBG.onclick = function() { modal.style.display = "none"; window.history.pushState("Dragon Ink", "Dragon Ink", ""); }
-			closeSection.onclick = function() { modal.style.display = "none"; window.history.pushState("Dragon Ink", "Dragon Ink", ""); }
+			closeBG.onclick = function() { modal.style.display = "none"; cleanQueryState(); }
+			closeSection.onclick = function() { modal.style.display = "none"; cleanQueryState(); }
 
 			// Parse query string and display the corresponding thing as necessary
 			// Modified from https://stackoverflow.com/a/2091331
@@ -481,6 +481,16 @@
 			    }
 
 			    return null;
+			}
+
+			// Remove the query string in the browser window
+			// From http://atodorov.org/blog/2013/01/28/remove-query-string-with-javascript-and-html5/
+			function cleanQueryState() {
+				let uri = window.location.toString();
+				if (uri.indexOf("?") > 0) {
+				    let clean_uri = uri.substring(0, uri.indexOf("?"));
+				    window.history.replaceState({}, document.title, clean_uri);
+				}
 			}
 
 			// Parse out params and pop up the target image if it exists
