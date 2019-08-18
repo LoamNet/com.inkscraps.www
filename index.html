@@ -464,8 +464,8 @@
 			let closeBG = document.getElementById("modal");
 
 			// Modal function binding
-			closeBG.onclick = function() { modal.style.display = "none"; }
-			closeSection.onclick = function() { modal.style.display = "none"; }
+			closeBG.onclick = function() { modal.style.display = "none"; window.history.pushState("Dragon Ink", "Dragon Ink", ""); }
+			closeSection.onclick = function() { modal.style.display = "none"; window.history.pushState("Dragon Ink", "Dragon Ink", ""); }
 
 			// Parse query string and display the corresponding thing as necessary
 			// Modified from https://stackoverflow.com/a/2091331
