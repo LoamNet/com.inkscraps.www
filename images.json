@@ -1,5 +1,19 @@
 images = [
 	{
+		"date":"2019-08-21",
+		"title":"Large-Journal",
+
+		"src":"assets/images/35 page journal.jpg",
+		"alt":"One of the thickest journals I've made, and it's turning out well so far!"
+	},
+	{
+		"date":"2019-08-21",
+		"title":"Cover-Tree",
+
+		"src":"assets/images/cover tree.jpg",
+		"alt":"A black and white tree on a thicker cover sheet!"
+	},
+	{
 		"date":"2019-08-18",
 		"title":"40-Pages",
 
