@@ -1,5 +1,19 @@
 images = [
 	{
+		"date":"2019-08-26",
+		"title":"Envelope-One",
+
+		"src":"assets/images/envelope one.jpg",
+		"alt":"An envelope made from a thicker, larger sheet of paper."
+	},
+	{
+		"date":"2019-08-26",
+		"title":"Cliffside-Meander",
+
+		"src":"assets/images/cliffside meander.jpg",
+		"alt":"A foggy cliffside, perfect place for two trees to take a walk."
+	},
+	{
 		"date":"2019-08-21",
 		"title":"Large-Journal",
 
