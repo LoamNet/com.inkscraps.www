@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2019-09-04",
+		"title":"Blue-Paper",
+
+		"src":"assets/images/blue paper 1.jpg",
+		"alt":"A light blue batch of paper for a custom journal!"
+	},
+	{
 		"date":"2019-08-30",
 		"title":"Blue-Experiment",
 
