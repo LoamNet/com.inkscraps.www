@@ -89,6 +89,8 @@
 		<script language="JavaScript" src="inventory.json"></script>
 		<script type="text/javascript">
 
+			document.getElementById('ink-logo').draggable = false;
+
 			function rowsAsTable(text) {
 				return `<table class="ink-table">\n${text}</table>\n`;
 			}
@@ -98,7 +100,7 @@
 			}	
 
 			function td(text) {
-				return `<tr class="ink-table-td">${text}</tr>\n`;
+				return `<td class="ink-table-td">${text}</td>\n`;
 			}
 
 			// Create the header for the inventory table
@@ -107,7 +109,7 @@
 
 				accumulated += "<tr>\n";
 				accumulated += th("Picture");
-				accumulated += th("Info");
+				accumulated += th("About");
 				accumulated += th("Price");
 				accumulated += th("Shipping");
 				accumulated += th("Total");
@@ -117,14 +119,14 @@
 			}
 
 			// Using a single object inside of the json array, create a row for the inventory table
-			function createItem(object) {
+			function createItem(obj) {
 				let accumulated = "";
 
 				accumulated += "<tr>\n";
-				accumulated += td("Picture");
-				accumulated += td("Info");
-				accumulated += td("Price");
-				accumulated += td("Shipping");
+				accumulated += td(`<img style="max-height: 100px;" src="${obj.src}" alt="${obj.alt}">\n`);
+				accumulated += td(`<div class="text-left" style="padding: 5px;">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p>${obj.alt}</p>\n<div>\n`);
+				accumulated += td(`<p>$${obj.price}</p>`);
+				accumulated += td(`<p>${obj.freeShipping ? "free!" : "$5.00"}</p>`);
 				accumulated += td("Total");
 				accumulated += "</tr>\n";
 
@@ -138,7 +140,7 @@
 
 				accumulated += createHeader();
 
-				for(let i = 0; i < inventory.lenght; ++i) {
+				for(let i = 0; i < inventory.length; ++i) {
 					accumulated += createItem(inventory[i]);
 				}
 

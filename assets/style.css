@@ -274,13 +274,13 @@ hr {
 	margin-right: auto;
 }
 
-.ink-table-tr {
+.ink-table-td {
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgba(0,0,0,.2);
 }
 
-.ink-table-td {
+.ink-table-th {
 	border-style: solid;
 	border-width: 1px;
 	border-color: rgba(0,0,0,.2);

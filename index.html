@@ -33,6 +33,10 @@
 		<link href="https://fonts.googleapis.com/css?family=Pangolin&display=swap" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+		<!-- Data -->
+		<script language="JavaScript" src="gallery.json"></script>
+		<script language="JavaScript" src="/globals.json"></script>
 	</head>
 	
 	<body>
@@ -68,22 +72,21 @@
 					<div class="col-md">
 						<img class="ink-item-img" src="assets/example-paper.jpg" alt="A fanned out stack of raspberry colored paper">
 						<div class="text-left">
-							<p>Want to buy paper by the sheet? 4x6 sheets start at $0.75, and 8x10 sheets start at $1.50! To see what's available, inquire through the contact & comission form!</p>
-							<!--p>Want to buy paper by the sheet? 4x6 sheets start at $0.75, and 8x10 sheets start at $1.50! Check out the inventory page for a complete list of everything available!</p-->
-							<p>Looking for scrap paper? It starts at $0.30 a sheet with a 10-sheet minimum order. This paper is anything that doesn't meet thickness, uniformity, or sizing standards, or is more experimental in nature.</p>
+							<p>Want to buy paper by the sheet? 4x6 sheets start at <span class="ink-cost4x6">$1.00</span>, and 8x10 sheets start at <span class="ink-cost8x10">$2.00</span>! To see what's available, inquire through the contact & comission form!</p>
+							<p>Looking for scrap paper? It starts at <span class="ink-costScrap">$0.40</span> a sheet! This paper is anything that doesn't meet thickness, uniformity, or sizing standards, or is more experimental in nature.</p>
 						</div>
 					</div>
 					<div class="col-md">
 						<img class="ink-item-img" src="assets/example-art.jpg" alt="A fanned out stack of raspberry colored paper">
 						<div class="text-left">
-							<p>Looking for something a little more artsy? Custom quick tree doodles start at $5 for a sketch on 4x6 paper. Check out the gallery for examples, and the inventory page to see what's available.</p>
+							<p>Looking for something a little more artsy? Custom quick tree doodles start at <span class="ink-costDoodle">$10.00</span> for a sketch on 4x6 paper. Check out the gallery for examples, and the inventory page to see what's available.</p>
 							<p>Custom pieces can be made to order, and pricing will varry based on the size and complexity!</p>
 						</div>
 					</div>
 					<div class="col-md">
 						<img class="ink-item-img" src="assets/example-journal.jpg" alt="A fanned out stack of raspberry colored paper">
 						<div class="text-left">
-							<p>Looking for a custom bound journal? Pricing starts at $10, and by default journals come with 10 inner pages, front and back cover, and have a thread and glue binding. Each page in the journal (not including covers) is $1.10 if uncolored, or $1.25 if colored, and you can have up to 35 pages! Complex color sets and cover artwork/designs may add additional cost!</p>
+							<p>Looking for a custom bound journal? Pricing starts at <span class="ink-costJournalBase">$15</span>, and by default journals come with 10 inner pages, front and back cover, and have a thread and glue binding. Each page in the journal (not including covers) is <span class="ink-costPageUncolored">$1.00 if uncolored</span>, or <span class="ink-costPageColored">$1.50</span> if colored, and you can have up to <span class="ink-maxJournalSize">40</span> pages! Complex color sets and cover artwork/designs may add additional cost!</p>
 						</div>
 					</div>
 				</div>
@@ -111,7 +114,7 @@
 				<!-- Section footnote -->
 				<div>
 					<br/>
-					<p class="text-left ink-footer-text" style="max-width: 400px; margin-left: auto; margin-right: auto; font-size: ">Shipping is $5 for all orders. Tax is included in all pricing. Overseas or non-US orders may incur additional shipping cost depending on location. All paper is made from recycled materials, and will naturally contain some imperfections and small bits of other materials as a result!</p>
+					<p class="text-left ink-footer-text" style="max-width: 400px; margin-left: auto; margin-right: auto; font-size: ">Shipping is <span class="ink-shipping">$5.00</span> for all orders. Tax is included in all pricing. Overseas or non-US orders may incur additional shipping cost depending on location. All paper is made from recycled materials, and will naturally contain some imperfections and small bits of other materials as a result!</p>
 					<br/>
 				</div>
 
@@ -160,15 +163,12 @@
 			</div>
 		</div>
 
-		<!-- Provides an array of image objects -->
-		<script language="JavaScript" src="gallery.json"></script>
-
 		<!-- Set up the document -->
 		<script type="text/javascript">
 			// Variables
 			let columns = 4;
 
-			// Disable logo interactions
+			// Quick adjustments
 			document.getElementById('ink-logo').draggable = false;
 
 			// Sift through and display all the images in the json file
@@ -271,6 +271,28 @@
 					}
 				}
 			}
+
+			// Globals updating
+			function updateWithGlobals() {
+
+				// Pricing updates
+				for(let key in globals) {
+					let valToUpdate = document.getElementsByClassName('ink-' + key);
+					let isPrice = false;
+
+					if(key.includes('cost')) {
+						isPrice = true;
+					}
+
+					for(let i = 0; i < valToUpdate.length; ++i) {
+						valToUpdate[i].innerHTML = `${isPrice ? "$" + globals[key].toFixed(2) : globals[key]}`;
+					}
+				}
+			}
+
+			// Loading replace
+			document.onLoad = updateWithGlobals();
+
 		</script>
 	</body>
 </html>
