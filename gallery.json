@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2019-09-09",
+		"title":"Package",
+
+		"src":"assets/images/package.jpg",
+		"alt":"One of the journals I made, all packaged up and ready to be shipped out in the mail!"
+	},
+	{
 		"date":"2019-09-08",
 		"title":"Small-Blue-Jouranl",
 
