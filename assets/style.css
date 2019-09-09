@@ -272,16 +272,28 @@ hr {
 	border-style: solid;
 	margin-left: auto;
 	margin-right: auto;
+	border-width: 5px;
+	border-color: lightgrey;
 }
 
 .ink-table-td {
 	border-style: solid;
 	border-width: 1px;
-	border-color: rgba(0,0,0,.2);
+	border-color: lightgrey;
+}
+
+.ink-table img {
+	max-height: 120px;
+	border-radius: 7px;
+	filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.15));
+	margin: 5px;
 }
 
 .ink-table-th {
+	vertical-align: top;
 	border-style: solid;
 	border-width: 1px;
-	border-color: rgba(0,0,0,.2);
+	border-color: lightgrey;
+	padding-left: 10px;
+	padding-right: 10px;
 }

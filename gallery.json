@@ -1,6 +1,13 @@
 images = [
 	{
 		"date":"2019-09-08",
+		"title":"Small-Blue-Jouranl",
+
+		"src":"assets/images/small blue 10 page journal.jpg",
+		"alt":"A smaller blue journal that was my test for a newer type of stronger binding!"
+	}
+	{
+		"date":"2019-09-08",
 		"title":"Blue-Journal",
 
 		"src":"assets/images/blue 20 page journal.jpg",

@@ -33,6 +33,10 @@
 		<!-- Scripts -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+		<!-- Data -->
+		<script language="JavaScript" src="/globals.json"></script>
+		<script language="JavaScript" src="inventory.json"></script>
 	</head>
 	<body>
 		<div class="ink-body">
@@ -86,7 +90,6 @@
 		</div>
 
 		<!-- Script required to load before page finish-->
-		<script language="JavaScript" src="inventory.json"></script>
 		<script type="text/javascript">
 
 			document.getElementById('ink-logo').draggable = false;
@@ -112,7 +115,7 @@
 				accumulated += th("About");
 				accumulated += th("Price");
 				accumulated += th("Shipping");
-				accumulated += th("Total");
+				accumulated += th(`<div style="padding-left: 5px; padding-right: 5px;">Total\n<p style="font-size: .5em;">includes tax+shipping</p></div>`);
 				accumulated += "</tr>\n";
 
 				return accumulated;
@@ -121,13 +124,15 @@
 			// Using a single object inside of the json array, create a row for the inventory table
 			function createItem(obj) {
 				let accumulated = "";
+				let padding = "padding: 5px;";
+				let decimals = 2;
 
 				accumulated += "<tr>\n";
-				accumulated += td(`<img style="max-height: 100px;" src="${obj.src}" alt="${obj.alt}">\n`);
-				accumulated += td(`<div class="text-left" style="padding: 5px;">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p>${obj.alt}</p>\n<div>\n`);
-				accumulated += td(`<p>$${obj.price}</p>`);
-				accumulated += td(`<p>${obj.freeShipping ? "free!" : "$5.00"}</p>`);
-				accumulated += td("Total");
+				accumulated += td(`<img src="${obj.src}" alt="${obj.alt}">\n`);
+				accumulated += td(`<div class="text-left" style="${padding}">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p>${obj.alt}</p>\n<div>\n`);
+				accumulated += td(`<p style="${padding}">$${obj.price.toFixed(decimals)}</p>`);
+				accumulated += td(`<p style="${padding}">${obj.freeShipping ? "free!" : "$" + globals.costShipping.toFixed(decimals)}</p>`);
+				accumulated += td(`<p style="${padding}">$${(obj.price + (obj.freeShipping ? 0 : globals.costShipping)).toFixed(2)}`);
 				accumulated += "</tr>\n";
 
 				return accumulated;
