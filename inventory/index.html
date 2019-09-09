@@ -88,7 +88,63 @@
 		<!-- Script required to load before page finish-->
 		<script language="JavaScript" src="inventory.json"></script>
 		<script type="text/javascript">
-			
+
+			function rowsAsTable(text) {
+				return `<table class="ink-table">\n${text}</table>\n`;
+			}
+
+			function th(text) {
+				return `<th class="ink-table-th">${text}</th>\n`;
+			}	
+
+			function td(text) {
+				return `<tr class="ink-table-td">${text}</tr>\n`;
+			}
+
+			// Create the header for the inventory table
+			function createHeader() {
+				let accumulated = "";
+
+				accumulated += "<tr>\n";
+				accumulated += th("Picture");
+				accumulated += th("Info");
+				accumulated += th("Price");
+				accumulated += th("Shipping");
+				accumulated += th("Total");
+				accumulated += "</tr>\n";
+
+				return accumulated;
+			}
+
+			// Using a single object inside of the json array, create a row for the inventory table
+			function createItem(object) {
+				let accumulated = "";
+
+				accumulated += "<tr>\n";
+				accumulated += td("Picture");
+				accumulated += td("Info");
+				accumulated += td("Price");
+				accumulated += td("Shipping");
+				accumulated += td("Total");
+				accumulated += "</tr>\n";
+
+				return accumulated;
+			}
+
+			// Parse inventory
+			if(inventory.length > 0) {
+				let target = document.getElementById("ink-inventory");
+				let accumulated = "";
+
+				accumulated += createHeader();
+
+				for(let i = 0; i < inventory.lenght; ++i) {
+					accumulated += createItem(inventory[i]);
+				}
+
+				accumulated = rowsAsTable(accumulated);
+				target.innerHTML = accumulated;
+			}
 		</script>
 		</body>
 	</body>
