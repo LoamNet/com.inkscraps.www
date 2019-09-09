@@ -1,9 +1,37 @@
 inventory = [
 	{
-		"name":"",
-		"price":"8",
+		"name":"Two Trees",
+		"price":"5.00",
+		"freeShipping":true,
+		"src":"/assets/images/two trees.jpg",
+		"alt":"Two trees, sharing stories with eachother on standard light colored paper. Ships in a standard derg.ink envelope."
+	},
+	{
+		"name":"Black and White",
+		"price":"5.00",
+		"freeShipping":true,
+		"src":"/assets/images/black and white.jpg",
+		"alt":"Abstract doodles on standard light colored paper. Ships in a standard derg.ink envelope."
+	},
+	{
+		"name":"Greyscale Tree",
+		"price":"7.50",
+		"freeShipping":true,
+		"src":"/assets/images/cover tree.jpg",
+		"alt":"A single black and white tree on a more durable recycled cardboard type paper. Ships in a standard derg.ink envelope."
+	},
+	{
+		"name":"Two Trees",
+		"price":"5.00",
+		"freeShipping":true,
+		"src":"/assets/images/cliffside meander.jpg",
+		"alt":"A picture of two trees on a cliffside face. Ships in a standard derg.ink envelope."
+	},
+	{
+		"name":"Blue Envelope",
+		"price":"8.00",
 		"freeShipping":false,
-		"src":"images/blue small.jpg",
+		"src":"/assets/images/blue 10 page small.jpg",
 		"alt":"A 10-page blue journal that was the first test of my newer, more durable binding method. Pages are 3.5 inches wide instead of 4 inches, still 6 inches tall tho!"
 	}
 ]
