@@ -86,6 +86,13 @@
 					</span>
 					<p class="text-left ink-footer-text">Due to the nature of papermaking, sizing is approximate, tho tends to run a tad bigger than specified. Derg.ink comissions and distribution are handled by <a href="https://loam.net">Loam LLC</a>. Content copyright &copy; 2019 <a href="https://reveriewisp.com">Reverie Wisp</a> - all rights reserved.  Trademarks belong to their respective owners.</p>
 				</div>
+
+				<!-- Modal contents for selecting a displayable image -->
+				<div id="modal" class="ink-modal">
+					<span id="modal-close">&times;</span>
+					<img class="modal-content" id="ink-modal-image">
+					<div id="modal-caption"></div>
+				</div>
 			</div>
 		</div>
 
@@ -128,7 +135,7 @@
 				let decimals = 2;
 
 				accumulated += "<tr>\n";
-				accumulated += td(`<img src="${obj.src}" alt="${obj.alt}">\n`);
+				accumulated += td(`<img src="${obj.src}" alt="${obj.alt}" onclick="onImageClick('${obj.src}', '${obj.alt}');">\n`);
 				accumulated += td(`<div class="text-left" style="${padding}">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p>${obj.alt}</p>\n<div>\n`);
 				accumulated += td(`<p style="${padding}">$${obj.price.toFixed(decimals)}</p>`);
 				accumulated += td(`<p style="${padding}">${obj.freeShipping ? "free!" : "$" + globals.costShipping.toFixed(decimals)}</p>`);
@@ -151,6 +158,24 @@
 
 				accumulated = rowsAsTable(accumulated);
 				target.innerHTML = accumulated;
+			}
+
+			// Set up modal interactions
+			let modal = document.getElementById("modal");
+			var modalImg = document.getElementById("ink-modal-image");
+			let modalCaption = document.getElementById("modal-caption");
+			let closeSection = document.getElementById("modal-close");
+			let closeBG = document.getElementById("modal");
+
+			// Modal function binding
+			closeBG.onclick = function() { modal.style.display = "none"; }
+			closeSection.onclick = function() { modal.style.display = "none"; }
+
+			// Click callback function for the image
+			function onImageClick(src, alt) {
+				modal.style.display = "block";
+				modalImg.src = src;
+				modalCaption.innerHTML = alt;
 			}
 		</script>
 		</body>
