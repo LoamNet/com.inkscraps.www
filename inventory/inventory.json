@@ -1,0 +1,9 @@
+inventory = [
+	{
+		"name":"",
+		"price":"8",
+		"freeShipping":false,
+		"src":"images/blue small.jpg",
+		"alt":"A 10-page blue journal that was the first test of my newer, more durable binding method. Pages are 3.5 inches wide instead of 4 inches, still 6 inches tall tho!"
+	}
+]
