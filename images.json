@@ -1,5 +1,19 @@
 images = [
 	{
+		"date":"2019-09-08",
+		"title":"Blue-Journal",
+
+		"src":"assets/images/blue 20 page journal.jpg",
+		"alt":"A commissioned journal made from the bulk of blue pages and darker blue cover."
+	},
+	{
+		"date":"2019-09-06",
+		"title":"Shadow-Blue",
+
+		"src":"assets/images/shadow blue.jpg",
+		"alt":"A darker, more washed out blue-grey mini batch done for thicker cover pieces."
+	},
+	{
 		"date":"2019-09-04",
 		"title":"Blue-Paper",
 
