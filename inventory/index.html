@@ -38,7 +38,8 @@
 		<script language="JavaScript" src="/globals.json"></script>
 		<script language="JavaScript" src="inventory.json"></script>
 	</head>
-	<body>
+
+	<body style="margin-left: auto; margin-right: auto;">
 		<div class="ink-body">
 			<div class="ink-main container">
 
@@ -64,14 +65,16 @@
 				<!-- Section title -->
 				<div class="ink-hr">
 					<hr/>
-					<h2 class="ink-text-title">Ready to Ship Inventory</h2>
-					<br/>
+					<h2 class="ink-text-title">Current Inventory</h2>
+					<p class="text-center" style="max-width: 320px; margin-left: auto; margin-right: auto;">All inventory pictured is ready to ship! Looking to order, ask a question, or haggle? Fill out the form!</p>
+					<a class="btn btn-outline-dark" href="/contact/">Order Inquiry &amp; Contact Form</a>
 				</div>
 
 				<!-- Inventory dynamic table -->
 				<div>
 					<br/>
 					<span id="ink-inventory"><p style="margin-left: auto; margin-right: auto; max-width: 240px;"><em>Goodness, looks like I'm all out of premade items! Check back soon!</em></p></span>
+					<p class="text-left ink-footer-text" id="footnote" style="max-width: 300px;">* All total prices include tax! Note that destinations outside of the US may incur additional shipping cost depending on location.</p>
 					<br/>
 				</div>
 
@@ -118,11 +121,9 @@
 				let accumulated = "";
 
 				accumulated += "<tr>\n";
-				accumulated += th("Picture");
+				accumulated += th("Item");
 				accumulated += th("About");
-				accumulated += th("Price");
-				accumulated += th("Shipping");
-				accumulated += th(`<div style="padding-left: 5px; padding-right: 5px;">Total\n<p style="font-size: .5em;">includes tax+shipping</p></div>`);
+				accumulated += th('Price<a href="#footnote">*</a>');
 				accumulated += "</tr>\n";
 
 				return accumulated;
@@ -133,13 +134,18 @@
 				let accumulated = "";
 				let padding = "padding: 5px;";
 				let decimals = 2;
+				let smallFont = "font-size: 0.7em;";
 
 				accumulated += "<tr>\n";
 				accumulated += td(`<img src="${obj.src}" alt="${obj.alt}" onclick="onImageClick('${obj.src}', '${obj.alt}');">\n`);
-				accumulated += td(`<div class="text-left" style="${padding}">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p>${obj.alt}</p>\n<div>\n`);
-				accumulated += td(`<p style="${padding}">$${obj.price.toFixed(decimals)}</p>`);
-				accumulated += td(`<p style="${padding}">${obj.freeShipping ? "free!" : "$" + globals.costShipping.toFixed(decimals)}</p>`);
-				accumulated += td(`<p style="${padding}">$${(obj.price + (obj.freeShipping ? 0 : globals.costShipping)).toFixed(2)}`);
+				accumulated += td(`<div class="text-left" style="${padding}">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p><a href="#" onclick="onImageClick('${obj.src}', '${obj.alt}');"><i class="fas fa-expand"></i> Details</a></p>\n<div>\n`);
+				accumulated += td(`
+					<div style="${padding}">
+					<p style="margin-bottom: 0px;">$${(obj.price + (obj.freeShipping ? 0 : globals.costShipping)).toFixed(2)}</p>
+					<hr style="margin: 10px;"/>
+					<p style="${smallFont}"><strong>Item:</strong><br/>$${obj.price.toFixed(decimals)}<br/><strong>Shipping:</strong><br/>${obj.freeShipping ? "free!" : "$" + globals.costShipping.toFixed(decimals)}</p>
+					</div>
+					`);
 				accumulated += "</tr>\n";
 
 				return accumulated;

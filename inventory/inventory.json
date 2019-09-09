@@ -7,31 +7,31 @@ inventory = [
 		"alt":"A 10-page blue journal that was the first test of my newer, more durable binding method. Pages are 3.5 inches wide instead of 4 inches, still 6 inches tall tho!"
 	},
 	{
-		"name":"Two Trees",
+		"name":"Trees Swapping Stories",
 		"price":5,
 		"freeShipping":true,
 		"src":"/assets/images/two trees.jpg",
-		"alt":"Two trees, sharing stories with eachother on standard light colored paper. Ships in a standard derg.ink envelope."
+		"alt":"Two trees, sharing stories with eachother on standard light colored paper. Ships in an envelope."
 	},
 	{
 		"name":"Black and White",
 		"price":5,
 		"freeShipping":true,
 		"src":"/assets/images/black and white.jpg",
-		"alt":"Abstract doodles on standard light colored paper. Ships in a standard derg.ink envelope."
+		"alt":"Abstract doodles on standard light colored paper. Ships in an envelope."
 	},
 	{
-		"name":"Greyscale Tree",
+		"name":"Monument to a Tree",
 		"price":6.50,
 		"freeShipping":true,
 		"src":"/assets/images/cover tree.jpg",
-		"alt":"A single black and white tree on a more durable recycled cardboard type paper. Ships in a standard derg.ink envelope."
+		"alt":"A single black and white tree on a more durable recycled cardboard type paper. Ships in an envelope."
 	},
 	{
-		"name":"Two Trees",
+		"name":"Cliffside Hangout",
 		"price":5,
 		"freeShipping":true,
 		"src":"/assets/images/cliffside meander.jpg",
-		"alt":"A picture of two trees on a cliffside face. Ships in a standard derg.ink envelope."
+		"alt":"A picture of two trees hanging out together on a cliffside! Ships in an envelope."
 	}
 ]
