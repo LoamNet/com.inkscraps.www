@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2019-09-16",
+		"title":"Graphite",
+
+		"src":"assets/images/graphite.jpg",
+		"alt":"Some darker colored graphite front and back thicker covers with a hint of warmth to them color-wise!"
+	},
+	{
 		"date":"2019-09-09",
 		"title":"Package",
 
