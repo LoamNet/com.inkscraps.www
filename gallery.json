@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2019-09-25",
+		"title":"Abstract-Tree",
+
+		"src":"assets/images/abstract tree.jpg",
+		"alt":"A small tree growing out of an old, abstract structure."
+	},
+	{
 		"date":"2019-09-16",
 		"title":"Graphite",
 
