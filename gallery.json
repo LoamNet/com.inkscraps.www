@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2019-10-03",
+		"title":"Grey-Gradient",
+
+		"src":"assets/images/grey gradient.jpg",
+		"alt":"A grey gradient made out of different grey pages, or a grey-dient if you will!"
+	},
+	{
 		"date":"2019-09-25",
 		"title":"Abstract-Tree",
 
