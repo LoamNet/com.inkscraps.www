@@ -1,5 +1,26 @@
 images = [
 	{
+		"date":"2019-10-13",
+		"title":"Pumpkin-Spice-Paper",
+
+		"src":"assets/images/pumpkin spice paper.jpg",
+		"alt":"In the spirit of everyone who has ever told me they want to eat the paper, I now present: Pumpkin spice heavily scented paper!"
+	},
+	{
+		"date":"2019-10-09",
+		"title":"Two-Packed",
+
+		"src":"assets/images/two packed.jpg",
+		"alt":"I always enjoy using some of the larger bulk sheets of paper I've made to help pack journals, be it one or more."
+	},
+	{
+		"date":"2019-10-09",
+		"title":"Greydient-Journals",
+
+		"src":"assets/images/greydient journals.jpg",
+		"alt":"One of the most technically challenging commissions I recieved - Everything from ink to acryllic to pigments were explored for this!"
+	},
+	{
 		"date":"2019-10-03",
 		"title":"Grey-Gradient",
 
