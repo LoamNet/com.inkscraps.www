@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2019-11-21",
+		"title":"Complex-Blue",
+
+		"src":"assets/images/complex blue.png",
+		"alt":"One of the first journals with a nature doodle on the front cover, and a unique colored spine!"
+	},
+	{
 		"date":"2019-10-13",
 		"title":"Pumpkin-Spice-Paper",
 
