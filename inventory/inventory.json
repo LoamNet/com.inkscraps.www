@@ -1,16 +1,51 @@
 inventory = [
 	{
+		"name":"Forest Waterfall",
+		"price":25,
+		"freeShipping":true,
+		"src":"/assets/images/forest waterfall.jpg",
+		"alt":"Watercolor painting of a lake draining into a river by a collection of fir trees."
+	},
+	{
+		"name":"Blue Leaf Duo",
+		"price":15,
+		"freeShipping":true,
+		"src":"/assets/images/blue leaf duo.jpg",
+		"alt":"Two trees done with light blue leaves on 4x6 grey paper."
+	},
+	{
+		"name":"Three Firs",
+		"price":15,
+		"freeShipping":true,
+		"src":"/assets/images/fir trees.jpg",
+		"alt":"Three wibbly fir trees in the afternoon sun. Done on light 4x6 paper."
+	},
+	{
+		"name":"Crystal Tree",
+		"price":15,
+		"freeShipping":true,
+		"src":"/assets/images/crystal tree.jpg",
+		"alt":"Roughtly 4x4 many-layered watercolor picture of a swampy, blue crystal tree on grey paper."
+	},
+	{
+		"name":"Watercolor Fall",
+		"price":15,
+		"freeShipping":true,
+		"src":"/assets/images/watercolor fall.jpg",
+		"alt":"Watercolor painting of a tree in the fall done on light 4x6 paper."
+	},
+	{
 		"name":"Black and White",
 		"price":10,
 		"freeShipping":true,
 		"src":"/assets/images/black and white.jpg",
-		"alt":"Abstract doodles on standard light colored paper. Ships in an envelope."
+		"alt":"Abstract doodles on standard light colored 4x6 paper."
 	},
 	{
 		"name":"Monument to a Tree",
-		"price":12,
+		"price":10,
 		"freeShipping":true,
 		"src":"/assets/images/cover tree.jpg",
-		"alt":"A single black and white tree on a more durable recycled cardboard type paper. Ships in an envelope."
+		"alt":"A single black and white tree on a more durable recycled cardboard type paper. Approximately 4x6."
 	}
 ]
