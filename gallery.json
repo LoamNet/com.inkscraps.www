@@ -1,5 +1,18 @@
 images = [
-
+	{
+		"date":"2020-01-26",
+		"title":"Forest Waterfall",
+		
+		"src":"assets/images/forest waterfall.jpg",
+		"alt":"Hidden waterfall in a fir forest, slowly draining a lake above."		
+	},
+	{
+		"date":"2020-01-26",
+		"title":"Crystal Tree",
+		
+		"src":"assets/images/crystal tree.jpg",
+		"alt":"A heavily glazed, rather old and relaxed crystal tree in a lush marsh."		
+	},
 	{
 		"date":"2020-01-20",
 		"title":"Fir Trees",
@@ -9,10 +22,10 @@ images = [
 	},
 	{
 		"date":"2020-01-15",
-		"title":"Blue Leaf",
+		"title":"Blue Leaf Duo",
 
-		"src":"assets/images/blue leaf.jpg",
-		"alt":"A blue-leafed, experimental watercolor tree done on grey paper."
+		"src":"assets/images/blue leaf duo.jpg",
+		"alt":"An experimental blue-leafed duo done on grey paper."
 	},
 	{
 		"date":"2020-01-13",
