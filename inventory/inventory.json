@@ -1,14 +1,14 @@
 inventory = [
 	{
 		"name":"Black and White",
-		"price":5,
+		"price":10,
 		"freeShipping":true,
 		"src":"/assets/images/black and white.jpg",
 		"alt":"Abstract doodles on standard light colored paper. Ships in an envelope."
 	},
 	{
 		"name":"Monument to a Tree",
-		"price":6.50,
+		"price":12,
 		"freeShipping":true,
 		"src":"/assets/images/cover tree.jpg",
 		"alt":"A single black and white tree on a more durable recycled cardboard type paper. Ships in an envelope."
