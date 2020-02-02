@@ -1,4 +1,33 @@
 images = [
+
+	{
+		"date":"2020-01-20",
+		"title":"Fir Trees",
+		
+		"src":"assets/images/fir trees.jpg",
+		"alt":"Three fir trees just hanging out on a lovely afternoon together!"		
+	},
+	{
+		"date":"2020-01-15",
+		"title":"Blue Leaf",
+
+		"src":"assets/images/blue leaf.jpg",
+		"alt":"A blue-leafed, experimental watercolor tree done on grey paper."
+	},
+	{
+		"date":"2020-01-13",
+		"title":"Watercolor Fall",
+
+		"src":"assets/images/watercolor fall.jpg",
+		"alt":"A single, happy amber-leafed tree done with watercolor on light 4x6 paper!"
+	},
+	{
+		"date":"2020-01-13",
+		"title":"Watercolor Fall Paints",
+
+		"src":"assets/images/watercolor fall paints.jpg",
+		"alt":"A wider version of the watercolor fall picture, featuring the watercolor paints used."
+	},
 	{
 		"date":"2019-11-21",
 		"title":"Complex-Blue",
