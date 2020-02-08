@@ -64,10 +64,31 @@
 				<!-- Section title -->
 				<div class="ink-hr">
 					<hr/>
-					<h2 class="ink-text-title">Current Inventory</h2>
-					<p class="text-center" style="max-width: 320px; margin-left: auto; margin-right: auto;">All inventory pictured is ready to ship! Looking to order, ask a question, or haggle? Fill out the form!</p>
-					<a class="btn btn-outline-dark" href="/contact/">Order Inquiry &amp; Contact Form</a>
+					<h2 class="ink-text-title">Inventory &amp; Commissions</h2>
+					<p style="max-width: 320px; margin-left: auto; margin-right: auto; text-align: left;">
+						If you're interested in getting something custom, go ahead and let me know what you're after! If you like the look of something in the list below, let me know which it is! In either case, I'll get back to you as soon as possible.
+						<form style="max-width: 320px; margin-left: auto; margin-right: auto; text-align: left;"
+						  action="https://formspree.io/xnqdbzjk"
+						  method="POST"
+						>
+						  <label>
+						    <strong>Email</strong><br/>
+						    <span style="font-size: .8em;"><em>I need it to be able to contact you!</em></span>
+						    <input style="width: 100%;" type="email" name="contact" required>
+						  </label>
+						  <br/>
+						  <label>
+						    <strong>Commission request or item(s) of interest:</strong><br/>
+						    <textarea style="width: 100%; min-height: " name="message"></textarea>
+						  </label>
+						<br/>
+						  <!-- your other form fields go here -->
+
+						  <button class="btn btn-outline-dark" type="submit">Submit</button>
+						</form>
+					</p>
 				</div>
+				<hr style="max-width: 320px;"/>
 
 				<!-- Inventory dynamic table -->
 				<div>
