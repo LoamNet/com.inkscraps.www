@@ -1,6 +1,7 @@
 inventory = [
 	{
 		"name":"Forest Waterfall",
+		"lastUpdated":"2020-02-08",
 		"price":25,
 		"freeShipping":true,
 		"src":"/assets/images/forest waterfall.jpg",
@@ -8,6 +9,7 @@ inventory = [
 	},
 	{
 		"name":"Blue Leaf Duo",
+		"lastUpdated":"2020-02-08",
 		"price":15,
 		"freeShipping":true,
 		"src":"/assets/images/blue leaf duo.jpg",
@@ -15,6 +17,7 @@ inventory = [
 	},
 	{
 		"name":"Three Firs",
+		"lastUpdated":"2020-02-08",
 		"price":15,
 		"freeShipping":true,
 		"src":"/assets/images/fir trees.jpg",
@@ -22,6 +25,7 @@ inventory = [
 	},
 	{
 		"name":"Crystal Tree",
+		"lastUpdated":"2020-02-08",
 		"price":15,
 		"freeShipping":true,
 		"src":"/assets/images/crystal tree.jpg",
@@ -29,6 +33,7 @@ inventory = [
 	},
 	{
 		"name":"Watercolor Fall",
+		"lastUpdated":"2020-02-08",
 		"price":15,
 		"freeShipping":true,
 		"src":"/assets/images/watercolor fall.jpg",
@@ -36,6 +41,7 @@ inventory = [
 	},
 	{
 		"name":"Black and White",
+		"lastUpdated":"2020-02-08",
 		"price":10,
 		"freeShipping":true,
 		"src":"/assets/images/black and white.jpg",
@@ -43,6 +49,7 @@ inventory = [
 	},
 	{
 		"name":"Monument to a Tree",
+		"lastUpdated":"2020-02-08",
 		"price":10,
 		"freeShipping":true,
 		"src":"/assets/images/cover tree.jpg",

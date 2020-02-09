@@ -156,8 +156,8 @@
 				let smallFont = "font-size: 0.7em;";
 
 				accumulated += "<tr>\n";
-				accumulated += td(`<img src="${obj.src}" alt="${obj.alt}" onclick="onImageClick('${obj.src}', '${obj.alt}');">\n`);
-				accumulated += td(`<div class="text-left" style="${padding}">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p><a href="javascript:void(0);" onclick="onImageClick('${obj.src}', '${obj.alt}');"><i class="fas fa-expand"></i> Details</a></p>\n<div>\n`);
+				accumulated += td(`<img class="ink-inventory-entry" data-updated="${obj.lastUpdated}" data-name="${obj.name}" src="${obj.src}" alt="${obj.alt}" onclick="onImageClick('${obj.src}', '${obj.alt}','${obj.lastUpdated}','${obj.name}', true);">\n`);
+				accumulated += td(`<div class="text-left" style="${padding}">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p><a href="javascript:void(0);" onclick="onImageClick('${obj.src}', '${obj.alt}','${obj.lastUpdated}','${obj.name}',true);"><i class="fas fa-expand"></i> Details</a></p>\n<div>\n`);
 				accumulated += td(`
 					<div style="${padding}">
 					<p style="margin-bottom: 0px;">$${(obj.price + (obj.freeShipping ? 0 : globals.costShipping)).toFixed(2)}</p>
@@ -191,6 +191,7 @@
 			let modalCaption = document.getElementById("modal-caption");
 			let closeSection = document.getElementById("modal-close");
 			let closeBG = document.getElementById("modal");
+			let displayed = document.getElementsByClassName("ink-inventory-entry");
 
 			// Remove the query string in the browser window
 			// From http://atodorov.org/blog/2013/01/28/remove-query-string-with-javascript-and-html5/
@@ -202,18 +203,68 @@
 				}
 			}
 
+			// Parse query string and display the corresponding thing as necessary
+			// Modified from https://stackoverflow.com/a/2091331
+			function getQueryVariable(variable) {
+			    let query = window.location.search.substring(1);
+			    let vars = query.split('&');
+
+			    for (let i = 0; i < vars.length; i++) {
+			        let pair = vars[i].split('=');
+			        if (decodeURIComponent(pair[0]) == variable) {
+			            return decodeURIComponent(pair[1]);
+			        }
+			    }
+
+			    return null;
+			}
 
 			// Modal function binding
 			closeBG.onclick = function() { modal.style.display = "none"; cleanQueryState(); }
 			closeSection.onclick = function() { modal.style.display = "none"; cleanQueryState(); }
 
 
-
 			// Click callback function for the image
-			function onImageClick(src, alt) {
+			function onImageClick(src, alt, updated, name, writeToHistory) {
 				modal.style.display = "block";
 				modalImg.src = src;
 				modalCaption.innerHTML = alt;
+
+				if(writeToHistory != null && writeToHistory == true)
+				{
+						let date = updated;
+						let source = src;
+						let desc = alt;
+						let title = name;
+						let querystr = `?updated=${date}&name=${title}`;
+
+						document.querySelector('meta[property="og:title"').setAttribute("content", title);
+						document.querySelector('meta[property="og:image"').setAttribute("content", "https://drgn.ink" + source);
+						document.querySelector('meta[property="og:description"').setAttribute("content", desc);
+						document.querySelector('meta[property="og:url"').setAttribute("content", "https://drgn.ink/" + querystr);
+
+						window.history.pushState("Dragon Ink Gallery", "Dragon Ink Gallery", querystr);
+				}
+			}
+
+			// Parse out params and pop up the target image if it exists
+			if(getQueryVariable('updated') != null && getQueryVariable('name') != null)
+			{
+				let date = getQueryVariable('updated').toLowerCase();
+				let title = getQueryVariable('name').toLowerCase();
+
+				for(let i = 0; i < displayed.length; ++i) {
+					let target = displayed[i];
+					let targetSrc = target.getAttribute("src").toLowerCase();
+					let targetAlt = target.getAttribute("alt").toLowerCase();
+					let targetUpdated = target.getAttribute("data-updated").toLowerCase();
+					let targetName = target.getAttribute("data-name").toLowerCase();
+
+					if(date == targetUpdated && title == targetName) {
+						onImageClick(targetSrc, targetAlt, targetUpdated, targetName, false);
+						break;
+					}
+				}
 			}
 		</script>
 		</body>
