@@ -157,7 +157,7 @@
 
 				accumulated += "<tr>\n";
 				accumulated += td(`<img src="${obj.src}" alt="${obj.alt}" onclick="onImageClick('${obj.src}', '${obj.alt}');">\n`);
-				accumulated += td(`<div class="text-left" style="${padding}">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p><a href="#" onclick="onImageClick('${obj.src}', '${obj.alt}');"><i class="fas fa-expand"></i> Details</a></p>\n<div>\n`);
+				accumulated += td(`<div class="text-left" style="${padding}">\n<h2 class="ink-text-subtitle"><strong>${obj.name}</strong></h2>\n<p><a href="javascript:void(0);" onclick="onImageClick('${obj.src}', '${obj.alt}');"><i class="fas fa-expand"></i> Details</a></p>\n<div>\n`);
 				accumulated += td(`
 					<div style="${padding}">
 					<p style="margin-bottom: 0px;">$${(obj.price + (obj.freeShipping ? 0 : globals.costShipping)).toFixed(2)}</p>
@@ -187,14 +187,27 @@
 
 			// Set up modal interactions
 			let modal = document.getElementById("modal");
-			var modalImg = document.getElementById("ink-modal-image");
+			let modalImg = document.getElementById("ink-modal-image");
 			let modalCaption = document.getElementById("modal-caption");
 			let closeSection = document.getElementById("modal-close");
 			let closeBG = document.getElementById("modal");
 
+			// Remove the query string in the browser window
+			// From http://atodorov.org/blog/2013/01/28/remove-query-string-with-javascript-and-html5/
+			function cleanQueryState() {
+				let uri = window.location.toString();
+				if (uri.indexOf("?") > 0) {
+				    let clean_uri = uri.substring(0, uri.indexOf("?"));
+				    window.history.replaceState({}, document.title, clean_uri);
+				}
+			}
+
+
 			// Modal function binding
-			closeBG.onclick = function() { modal.style.display = "none"; }
-			closeSection.onclick = function() { modal.style.display = "none"; }
+			closeBG.onclick = function() { modal.style.display = "none"; cleanQueryState(); }
+			closeSection.onclick = function() { modal.style.display = "none"; cleanQueryState(); }
+
+
 
 			// Click callback function for the image
 			function onImageClick(src, alt) {
