@@ -2,7 +2,7 @@ inventory = [
 	{
 		"name":"Forest Waterfall",
 		"lastUpdated":"2020-02-08",
-		"price":25,
+		"price":35,
 		"freeShipping":true,
 		"src":"/assets/images/forest waterfall.jpg",
 		"alt":"Watercolor painting of a lake draining into a river by a collection of fir trees. Done on a 4x6 sheet handmade paper."
@@ -10,7 +10,7 @@ inventory = [
 	{
 		"name":"Wise Old Fir",
 		"lastUpdated":"2020-02-08",
-		"price":15,
+		"price":25,
 		"freeShipping":true,
 		"src":"/assets/images/wise old fir.jpg",
 		"alt":"An old fir, chatting and providing advice for the younger plants and animals in the area. Done with watercolor on a light 4x6 sheet of handmade paper paper."
@@ -18,7 +18,7 @@ inventory = [
 	{
 		"name":"Blue Leaf Duo",
 		"lastUpdated":"2020-02-08",
-		"price":15,
+		"price":25,
 		"freeShipping":true,
 		"src":"/assets/images/blue leaf duo.jpg",
 		"alt":"Two trees done with light blue leaves on 4x6 grey paper."
@@ -26,7 +26,7 @@ inventory = [
 	{
 		"name":"Three Firs",
 		"lastUpdated":"2020-02-08",
-		"price":15,
+		"price":25,
 		"freeShipping":true,
 		"src":"/assets/images/fir trees.jpg",
 		"alt":"Three wibbly fir trees in the afternoon sun. Done on light 4x6 paper."
@@ -34,7 +34,7 @@ inventory = [
 	{
 		"name":"Crystal Tree",
 		"lastUpdated":"2020-02-08",
-		"price":15,
+		"price":25,
 		"freeShipping":true,
 		"src":"/assets/images/crystal tree.jpg",
 		"alt":"Roughtly 4x4 many-layered watercolor picture of a swampy, blue crystal tree on grey paper."
@@ -42,7 +42,7 @@ inventory = [
 	{
 		"name":"Watercolor Fall",
 		"lastUpdated":"2020-02-08",
-		"price":15,
+		"price":25,
 		"freeShipping":true,
 		"src":"/assets/images/watercolor fall.jpg",
 		"alt":"Watercolor painting of a tree in the fall done on light 4x6 paper."
@@ -50,7 +50,7 @@ inventory = [
 	{
 		"name":"Black and White",
 		"lastUpdated":"2020-02-08",
-		"price":10,
+		"price":20,
 		"freeShipping":true,
 		"src":"/assets/images/black and white.jpg",
 		"alt":"Abstract doodles on standard light colored 4x6 paper."
@@ -58,7 +58,7 @@ inventory = [
 	{
 		"name":"Monument to a Tree",
 		"lastUpdated":"2020-02-08",
-		"price":10,
+		"price":20,
 		"freeShipping":true,
 		"src":"/assets/images/cover tree.jpg",
 		"alt":"A single black and white tree on a more durable recycled cardboard type paper. Approximately 4x6."
