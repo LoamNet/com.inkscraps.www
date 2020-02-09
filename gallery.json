@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2020-02-08",
+		"title":"Wise old fir",
+
+		"src":"assets/images/wise old fir.jpg",
+		"alt":"An old fir, chatting and providing advice for the younger plants and animals in the area."
+	},
+	{
 		"date":"2020-02-07",
 		"title":"Peaceful Mountains",
 

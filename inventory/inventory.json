@@ -5,7 +5,15 @@ inventory = [
 		"price":25,
 		"freeShipping":true,
 		"src":"/assets/images/forest waterfall.jpg",
-		"alt":"Watercolor painting of a lake draining into a river by a collection of fir trees."
+		"alt":"Watercolor painting of a lake draining into a river by a collection of fir trees. Done on a 4x6 sheet handmade paper."
+	},
+	{
+		"name":"Wise Old Fir",
+		"lastUpdated":"2020-02-08",
+		"price":15,
+		"freeShipping":true,
+		"src":"/assets/images/wise old fir.jpg",
+		"alt":"An old fir, chatting and providing advice for the younger plants and animals in the area. Done with watercolor on a light 4x6 sheet of handmade paper paper."
 	},
 	{
 		"name":"Blue Leaf Duo",
