@@ -1,5 +1,12 @@
 images = [
 	{
+		"date":"2020-02-07",
+		"title":"Peaceful Mountains",
+
+		"src":"assets/images/peaceful mountains.jpg",
+		"alt":"At the end of a remote forest stream sits a collection of friendly, snow-tipped mountains."
+	},
+	{
 		"date":"2020-01-26",
 		"title":"Forest Waterfall",
 		
