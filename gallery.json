@@ -1,5 +1,26 @@
 images = [
 	{
+		"date":"2020-03-05",
+		"title":"Forest Deer",
+
+		"src":"assets/images/forest deer.jpg",
+		"alt":"A deer taking cautious steps through a spring forest. This is a piece exploring creature additions."
+	},
+	{
+		"date":"2020-02-29",
+		"title":"Three Fall",
+
+		"src":"assets/images/three fall.jpg",
+		"alt":"Three fall trees changing with the start of the season! For this piece, I used every color available and painted it during part of a 5 hour flight."
+	},
+	{
+		"date":"2020-02-18",
+		"title":"Relaxing Willow",
+
+		"src":"assets/images/relaxing willow.jpg",
+		"alt":"A willow tree relaxing on a small island. I recieved a request for a willow tree, and I haven't done one quite like that yet so I gave it a go!"
+	},
+	{
 		"date":"2020-02-08",
 		"title":"Wise old fir",
 
