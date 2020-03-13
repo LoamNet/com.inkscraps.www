@@ -251,7 +251,7 @@
 			if(getQueryVariable('updated') != null && getQueryVariable('name') != null)
 			{
 				let date = getQueryVariable('updated').toLowerCase();
-				let title = getQueryVariable('name').toLowerCase();
+				let title = getQueryVariable('name').toLowerCase().replace(/-/g," ");
 
 				for(let i = 0; i < displayed.length; ++i) {
 					let target = displayed[i];
