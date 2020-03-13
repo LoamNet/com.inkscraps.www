@@ -227,7 +227,7 @@
 						let src = element.getAttribute("src");
 						let desc = element.getAttribute("alt");
 						let title = element.getAttribute("data-title");
-						let querystr = `?date=${date}&title=${encodeURIComponent(title.trim())}`;
+						let querystr = `?date=${date}&title=${title.trim().replace(/ /g,"%20"))}`;
 
 						document.querySelector('meta[property="og:title"').setAttribute("content", title);
 						document.querySelector('meta[property="og:image"').setAttribute("content", "https://drgn.ink/" + src);
