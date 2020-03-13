@@ -236,7 +236,7 @@
 						let source = src;
 						let desc = alt;
 						let title = name;
-						let querystr = `?updated=${date}&name=${title.trim().replace(/ /g,"%20")}`;
+						let querystr = `?updated=${date}&name=${title.trim().replace(/ /g,"-")}`;
 
 						document.querySelector('meta[property="og:title"').setAttribute("content", title);
 						document.querySelector('meta[property="og:image"').setAttribute("content", "https://drgn.ink" + source);
