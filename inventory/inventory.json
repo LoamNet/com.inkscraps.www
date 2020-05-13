@@ -56,14 +56,6 @@ inventory = [
 		"alt":"Watercolor painting of a tree in the fall done on light 4x6 paper."
 	},
 	{
-		"name":"Black and White",
-		"lastUpdated":"2020-02-08",
-		"price":20,
-		"freeShipping":true,
-		"src":"/assets/images/black and white.jpg",
-		"alt":"Abstract doodles on standard light colored 4x6 paper."
-	},
-	{
 		"name":"Monument to a Tree",
 		"lastUpdated":"2020-02-08",
 		"price":20,
